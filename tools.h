@@ -1,6 +1,6 @@
 #include <fstream>
 #include "string.h"
-    
+
 void obtenerDatos(istream &file,int nlines,int n,int mode,item* item_list){
     string line;
     file >> line;
@@ -50,7 +50,7 @@ void correctConditions(int n,condition *list){
 void leerMallayCondiciones(mesh &m){
     char filename[14];
     ifstream file;
-    float l,u_bar,nu,rho,f;
+    float l,t,k,y,u,w,a,d,n;
     int nnodes,neltos,ndirich_u,ndirich_p;
 
     
@@ -64,11 +64,11 @@ void leerMallayCondiciones(mesh &m){
     }while(!file);
 
     
-    file >> l >> u_bar >> nu >> rho >> f;
+    file >> l >> t >> k >> y >> u >> w >> a >> d >> n;
     file >> nnodes >> neltos >> ndirich_u >> ndirich_p;
 
     
-    m.setParameters(l,u_bar,nu,rho,f);
+    m.setParameters(l,t,k,y,u,w,a,d,n);
     m.setSizes(nnodes,neltos,ndirich_u+ndirich_p);
     m.createData();
 

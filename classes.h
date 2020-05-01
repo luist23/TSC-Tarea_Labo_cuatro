@@ -104,12 +104,12 @@ class mesh{
         element *element_list;
         condition *dirichlet_list;
     public:
-        void setParameters(float l,float t,float k,float y,float U,float w,float a,float d,float n){
+        void setParameters(float l,float t,float k,float y,float u,float w,float a,float d,float n){
             parameters[ELEMENT_LENGTH]=l;
             parameters[T]=t;
             parameters[K]=k;
             parameters[Y]=y;
-            parameters[U]=U;
+            parameters[U]=u;
             parameters[W]=w;
             parameters[A]=a;
             parameters[D]=d;
